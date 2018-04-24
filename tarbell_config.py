@@ -4,6 +4,9 @@
 Tarbell project configuration
 """
 
+# Google document key for the stories. If not specified, the Archie stuff is skipped
+# DOC_KEY = "None"
+
 # Google spreadsheet key
 SPREADSHEET_KEY = "1OuidYb3r9ml5JxDfxCMqHTKG3Pn1g6jjJHVeOeVbzjM"
 

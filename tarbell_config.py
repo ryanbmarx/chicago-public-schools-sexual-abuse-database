@@ -3,6 +3,27 @@
 """
 Tarbell project configuration
 """
+from flask import Blueprint, g, json
+import jinja2 #for context-getting
+
+
+blueprint = Blueprint('cps-abuse-database', __name__)
+
+@blueprint.app_template_filter('generate_autocomplete_list')
+def generate_autocomplete_list(crimes):
+    """
+    Takes the list of crimes and creates a list of unique school names
+    
+    """
+
+    retval = []
+    for c in crimes:
+        retval.append(c['FINAL_SKL_NAME'].strip());
+
+    retval = list(set(retval))
+
+    return json.dumps(retval)
+
 
 # Google document key for the stories. If not specified, the Archie stuff is skipped
 # DOC_KEY = "None"

@@ -4,6 +4,15 @@
 
 $border-radius: 5px;
 $arrest-color: rgba($trib-blue2, .2);
+$popup-max-height: 150px;
+
+$darkest: #070808;
+// $dark: #293B93;
+$dark: #0a154e;
+// $dark: #292D74;
+$bright: #FEE8A0;
+$white: #F1F3F4;
+
 
 // ---- ADD MORE VARIABLES HERE ---------------------------------------------
 // ---- (If working off platform, you can overide variable values here) -----
@@ -42,10 +51,19 @@ $arrest-color: rgba($trib-blue2, .2);
 
 	button{
 		display:block;
-		width: $button-width;
+
+		@supports (width: fit-content){
+			width: fit-content;
+			padding: #{$grid-gap / 2};
+		}
+
+		@supports not (width: fit-content){		
+			width: $button-width;
+			padding: #{$grid-gap / 2} 0;
+		}
+
 		border:none;
-		padding: #{$grid-gap / 2} 0;
-		color: set-text-color($button_color, true);
+		color: #{set-text-color($button_color, true)};
 		
 		background: $button_color;
 		transition: background 150ms ease;
@@ -83,13 +101,13 @@ $arrest-color: rgba($trib-blue2, .2);
 // ---- OFF-PLATFORM COMPONENT STYLES, UNCOMMENT THE ONES YOU WANT --------------------
 // ---- (You'll need most or all of them) ---------------------------------------------
 @import 'base-scaffolding';
-@import 'base-footer';
-@import 'base-navbar';
-@import 'base-social';
-@import 'base-byline';
-@import 'base-adverts';
-@import 'base-comments';
-@import 'base-hamburger';
+// @import 'base-footer';
+// @import 'base-navbar';
+// @import 'base-social';
+// @import 'base-byline';
+// @import 'base-adverts';
+// @import 'base-comments';
+// @import 'base-hamburger';
 
 
 // ---- IMPORT PROJECT STYLES FROM PARTIAL FILES HERE ---------------------------------------------
@@ -97,6 +115,11 @@ $arrest-color: rgba($trib-blue2, .2);
 
 
 // ---- WRITE MORE PROJECT STYLES HERE ---------------------------------------------
+
+html, body{
+	margin: 0;
+	padding: 0 0 $popup-max-height 0;
+}
 
 .sr-only{
 	// Use this to hide elements from everything except screen readers.
@@ -116,14 +139,21 @@ $arrest-color: rgba($trib-blue2, .2);
 	p{ @include agate(); }
 }
 
+article{
+	background: $white;
+	padding: $grid-gap;
+}
 
 #abuse-lookup {
 	@include searchbar($border-radius);
+	position:relative;
 }
+
 
 .awesomplete{
     flex: 1;
     box-sizing: border-box;
+    position: static; // So we can force the popup menu across the whole <form>
 	
 	input{
 		width: 100%;
@@ -131,11 +161,26 @@ $arrest-color: rgba($trib-blue2, .2);
 
     & > ul{
         // This is the autocomplete list
-        @include sans-serif();
+        @include agate();
         z-index: 1001;
+        max-height: $popup-max-height;
+        max-width: 320px;
+        overflow: scroll;
+        width: 100%;
     }
 }
 
+body[data-selection-made]{
+	padding: 0;
+	.awesomplete{
+	    & > ul{
+	        // This is the autocomplete list
+	        max-height: none;
+	        overflow: scroll;
+	        background: red;
+	    }
+	}
+}
 
 .profiles{ 
 	
@@ -198,7 +243,7 @@ $arrest-color: rgba($trib-blue2, .2);
 	background: rgba($trib-yellow2, .4);
 }
 
-/*
+
 // ##############################################
 // If you are using the off platform rig, then uncomment this code. otherwise you can delete it.
 // ##############################################
@@ -217,30 +262,6 @@ a{
 	}
 }
 
-
-// This is the paywall/meter/registration sticky note at the bottom of the page
-.met-flyout .met-promo-content{
-	p {
-		line-height: 1.3em;
-		font-family: "Arial", sans-serif;
-		span{
-			font: 14px/1.3em "Arial", sans-serif;
-			color:white;
-			width:100%;
-			margin: 0;
-
-			&:first-of-type{
-				font-weight: 700;
-			}
-
-			a {
-				font: 14px/1.3em "Arial", sans-serif !important;
-				
-			}
-		}
-	}
-}
-*/
 @media all and (min-width: $phablet-min-width){
 	// By default, this is 450px+
 	p{
@@ -249,12 +270,12 @@ a{
 	}
 }
 
-@media all and (min-width: $tablet-min-width){
-	// ONLY CHANGES FOR TABLETS + DESKTOPS
-	// By default, this is 650px+	
-}
+// @media all and (min-width: $tablet-min-width){
+// 	// ONLY CHANGES FOR TABLETS + DESKTOPS
+// 	// By default, this is 650px+	
+// }
 
-@media all and (min-width: $desktop-min-width){
-	// ONLY CHANGES FOR DESKTOPS
-	// By default, this is 850px+
-}
+// @media all and (min-width: $desktop-min-width){
+// 	// ONLY CHANGES FOR DESKTOPS
+// 	// By default, this is 850px+
+// }

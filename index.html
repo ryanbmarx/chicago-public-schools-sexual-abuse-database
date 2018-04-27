@@ -1,5 +1,20 @@
 {% extends "_base.html" %}
 
+
+{# We just need a stubby, bare-bones HTML tag. We can clear all this crud out #}
+{% block prefetch %}{% endblock %}
+{% block preconnect %}{% endblock %}
+{% block preload %}{% endblock %}
+{% block opengraph %}{% endblock %}
+{% block twitter %}{% endblock %}
+{% block meter %}{% endblock %}
+{% block adverts %}{% endblock %}
+{% block google_analytics %}{% endblock %}
+{% block nav scoped %}{% endblock %}
+{% block comments %}{% endblock %}
+{% block footer %}{% endblock %}
+{% block chartbeat %}{% endblock %}
+
 {% block library_scripts %}
 	{# <script src="//{{ ROOT_URL }}/js/vendor.min.js" type="text/javascript"></script> #}
 	<script>
@@ -19,22 +34,24 @@
 
 
 {% block content %}
-	{# YOUR STUFF GOES HERE #}
-	<p>Notes, in Faulknerian stream of conciousness ... this is where location is known and school is <em>almost</em> known. Some reports cannot be narrowed down to a single address. ... this database only includes schools with police reports. </p>
-	
-	<form id='abuse-lookup'>
-		<label for="school-search-bar" class='sr-only'>Search for a school</label>
-		<input id='school-search-bar' type='text' placeholder="Search for a school" />
-		<button type='submit'>Search</button>
-	</form>
-	<dl class='profiles-legend'>
-		<dt><span></span></dt>
-		<dd>Arrest was made</dd>
-	</dl>
-	<div class='profiles'></div>
-
-
-
+		<p>Notes, in Faulknerian stream of conciousness ... this is where location is known and school is <em>almost</em> known. Some reports cannot be narrowed down to a single address. ... this database only includes schools with police reports. </p>
+		
+		<form id='abuse-lookup'>
+			<label for="school-search-bar" class='sr-only'>Search for a school</label>
+			<input id='school-search-bar' type='text' placeholder="Search for a school" />
+			<button type='submit'>Search</button>
+		</form>
+		<dl class='profiles-legend'>
+			<dt><span></span></dt>
+			<dd>Arrest was made</dd>
+		</dl>
+		<div class='profiles'>
+			<p>No records selected.</p>
+		</div>
+		
+		<div class='credits'>
+			{{ sources|markdown }}
+		</div>
 {% endblock content %}
 
 

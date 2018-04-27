@@ -3,6 +3,16 @@ import clickTrack from "./click-track.js";
 import getJSDateFromExcel from './get-js-date-from-excel.js';
 import {timeFormat} from 'd3-time-format';
 
+const pym = require('pym.js');
+
+// Listen for the loaded event then run the pym stuff.
+window.addEventListener('load', function(e){
+	window.pymChild = new pym.Child({});
+	// pymChild.sendMessage('childLoaded');
+	window.pymChild.sendHeight();
+});
+
+
 window.addEventListener('load', function(e){
 	console.log("Window is onloaded");
 	// console.log('schools', window.schools);
@@ -42,7 +52,11 @@ window.addEventListener('load', function(e){
 		clickTrack('CPS Abuse - school lookup search');
 	});
 
-
+	// window.addEventListener('awesomplete-open', e => {
+	// 	console.log("popup has appeared")
+	// 	window.pymChild.sendHeight()
+	// });
+	// window.addEventListener('awesomplete-close', e => window.pymChild.sendHeight());
 })
 
 function getSchoolsList(policeReports){
@@ -90,6 +104,11 @@ function makeProfiles(schoolName, profilesContainer){
 
 			console.log(parsedProfiles);
 			profilesContainer.innerHTML = parsedProfiles;			
+		})
+		.then(function(){
+			console.log('sending height');
+			document.querySelector('body').dataset.selectionMade = true;
+			window.pymChild.sendHeight();
 		});
 
 }

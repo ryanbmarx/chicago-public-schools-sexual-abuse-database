@@ -34,7 +34,8 @@
 
 
 {% block content %}
-		<p>Notes, in Faulknerian stream of conciousness ... this is where location is known and school is <em>almost</em> known. Some reports cannot be narrowed down to a single address. ... this database only includes schools with police reports. </p>
+		<h1 class='header'>{{ db_header }}</h1>
+		{{ db_chatter|markdown }}
 		
 		<form id='abuse-lookup'>
 			<label for="school-search-bar" class='sr-only'>Search for a school</label>

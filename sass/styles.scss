@@ -13,7 +13,6 @@ $dark: #0a154e;
 $bright: #FEE8A0;
 $white: #F1F3F4;
 
-
 // ---- ADD MORE VARIABLES HERE ---------------------------------------------
 // ---- (If working off platform, you can overide variable values here) -----
 
@@ -121,29 +120,14 @@ html, body{
 	padding: 0 0 $popup-max-height 0;
 }
 
-.sr-only{
-	// Use this to hide elements from everything except screen readers.
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	padding: 0;
-	margin: -1px;
-	overflow: hidden;
-	clip: rect(0,0,0,0);
-	border: 0;
-}
-
-
-article{
-	background: $white;
-	padding: $grid-gap;
+.header{
+	@extend %header;
 }
 
 #abuse-lookup {
 	@include searchbar($border-radius);
 	position:relative;
 }
-
 
 .awesomplete{
     flex: 1;
@@ -191,7 +175,7 @@ body[data-selection-made]{
 	
 	table{
 		@include trib-table(compressed);
-
+		border-bottom: none;
 		.arrests{ max-width: 50px; }
 		.date{ min-width: 100px; }
 	}

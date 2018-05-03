@@ -1,6 +1,7 @@
 $color-links: $trib-blue3 !default;
+$fonts-sans-serif: "Open Sans", "Helvetica", "Arial", sans-serif;
 
-.credits, .trb_mainContent .credits {
+.credits {
 	// All notes, sources and credits should go inside a container class='credits'
 	// and should use the agate type style. No italics
 	p{ 
@@ -10,7 +11,7 @@ $color-links: $trib-blue3 !default;
 
 
 p{
-	font: 15px/1.3em $fonts-serif;
+	@include sans-serif();
 	margin: 0 0 #{$grid-gap / 2} 0;
 }
 

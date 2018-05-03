@@ -32,7 +32,7 @@ def generate_autocomplete_list(crimes):
 SPREADSHEET_KEY = "1OuidYb3r9ml5JxDfxCMqHTKG3Pn1g6jjJHVeOeVbzjM"
 
 # Exclude these files from publication
-EXCLUDES = ['*.md', 'requirements.txt', 'node_modules', 'sass', 'js/src', '*.ai', 'package.json', 'Gruntfile.js']
+EXCLUDES = ['*.md', 'requirements.txt', 'node_modules', 'sass', 'js/src', '*.ai', 'package.json', 'img/svgs', 'Gruntfile.js']
 
 # Spreadsheet cache lifetime in seconds. (Default: 4)
 # SPREADSHEET_CACHE_TTL = 4

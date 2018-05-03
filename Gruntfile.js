@@ -42,8 +42,35 @@ module.exports = function(grunt) {
           ]
         ]
       }
+    },
+    roles: {
+      src: ['js/src/roles.js'],
+      dest: 'js/roles.min.js',
+      options: {
+        plugin: [
+          [
+            'minifyify', {
+              map: 'roles.min.js.map',
+              output: './js/roles.min.js.map'
+            }
+          ]
+        ],
+        transform: [
+          [
+            'babelify', {
+              "presets": [
+                ["env", {
+                  "targets": {
+                    "browsers": ["> 1%", "ie >= 11"]
+                  }
+                }]
+              ]
+            }
+          ]
+        ]
+      }
     }
-  };
+};
 
   // Check if there are vendor libraries and build a vendor bundle if needed
   if (VENDOR_LIBRARIES.length) {
@@ -75,7 +102,8 @@ module.exports = function(grunt) {
     },
     app: {
       files: {
-        'css/styles.css': 'sass/styles.scss'
+        'css/styles.css': 'sass/styles.scss',
+        'css/roles.css': 'sass/roles.scss'
       }
     }
   };

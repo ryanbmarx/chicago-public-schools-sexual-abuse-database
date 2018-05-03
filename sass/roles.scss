@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700"');
 @import 'base-variables';
-
+@import 'config';
 
 @import 'base-mixins';
 
@@ -29,7 +29,7 @@
 	position: relative;
 	
 	&__bar{
-		background: red;
+		background: $dark;
 		position: absolute;
 		top: 0;
 		left: 0;

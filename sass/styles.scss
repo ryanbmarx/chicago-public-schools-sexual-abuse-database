@@ -1,17 +1,17 @@
 // Enables Tribune colors, but is required for everything.
 @import 'base-variables';
 @import 'base-config'; // If you are using the off-platform blueprint, uncomment this.
+@import 'config';
 
-$border-radius: 5px;
 $arrest-color: rgba($trib-blue2, .2);
 $popup-max-height: 150px;
 
-$darkest: #070808;
+// $darkest: #070808;
 // $dark: #293B93;
-$dark: #0a154e;
+// $dark: #0a154e;
 // $dark: #292D74;
-$bright: #FEE8A0;
-$white: #F1F3F4;
+// $bright: #FEE8A0;
+// $white: #F1F3F4;
 
 // ---- ADD MORE VARIABLES HERE ---------------------------------------------
 // ---- (If working off platform, you can overide variable values here) -----

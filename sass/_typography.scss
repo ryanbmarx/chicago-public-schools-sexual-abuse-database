@@ -1,0 +1,37 @@
+$color-links: $trib-blue3 !default;
+
+.credits, .trb_mainContent .credits {
+	// All notes, sources and credits should go inside a container class='credits'
+	// and should use the agate type style. No italics
+	p{ 
+		@include agate(); 
+	}
+}
+
+
+p{
+	font: 15px/1.3em $fonts-serif;
+	margin: 0 0 #{$grid-gap / 2} 0;
+}
+
+a{
+	color: $color-links;
+	text-decoration: none;
+
+	&:hover{
+		text-decoration: underline;
+	}
+}
+
+%header{
+	@include label6();
+	margin: 0 0 7px 0;
+}
+
+// @media all and (min-width: $phablet-min-width){
+// 	// By default, this is 450px+
+// 	// p{
+// 	// 	font-size: 18px;
+// 	// 	line-height: 1.5em;
+// 	// }
+// }

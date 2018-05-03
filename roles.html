@@ -1,10 +1,25 @@
+{% set max_value = roles|get_max_value("count") %}
+
 <!DOCTYPE html>
 <html>
 <head>
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="http://{{ ROOT_URL }}/css/roles.css">
 </head>
-<body>
-
+<body class='roles'>
+	<h1 class='roles__header'>{{ roles_header }}</h1>
+	<p class='roles__chatter'>{{ roles_chatter|process_text() }}</p>
+	<ul class='roles__list'>
+	{%- for role in roles|sort(True, attribute="count") %}
+		{% set width = role.count / max_value * 100 %}
+		<li class='role'>
+			<div class='role__bar' style='width: {{ width }}%'></div>
+			<p>{{ role.role }}: <strong>{{ role.count }}</strong></p>
+		</li>
+	{% endfor %}
+	</ul>
+	<div class='credits'>
+		{{ roles_sources|markdown }}
+	</div>
 </body>
 </html>

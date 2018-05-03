@@ -112,32 +112,27 @@ $white: #F1F3F4;
 
 // ---- IMPORT PROJECT STYLES FROM PARTIAL FILES HERE ---------------------------------------------
 @import "../node_modules/awesomplete/awesomplete"; // For the autocomplete
-
+@import 'reset';
+@import 'typography';
 
 // ---- WRITE MORE PROJECT STYLES HERE ---------------------------------------------
 
 html, body{
-	margin: 0;
 	padding: 0 0 $popup-max-height 0;
 }
 
 .sr-only{
 	// Use this to hide elements from everything except screen readers.
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0,0,0,0);
-  border: 0;
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0,0,0,0);
+	border: 0;
 }
 
-.credits, .trb_mainContent .credits {
-	// All notes, sources and credits should go inside a container class='credits'
-	// and should use the agate type style. No italics
-	p{ @include agate(); }
-}
 
 article{
 	background: $white;
@@ -243,39 +238,3 @@ body[data-selection-made]{
 	background: rgba($trib-yellow2, .4);
 }
 
-
-// ##############################################
-// If you are using the off platform rig, then uncomment this code. otherwise you can delete it.
-// ##############################################
-
-p{
-	font: 15px/1.6em $serif-fonts;
-	margin: 0 0 #{$grid-gap / 2} 0;
-}
-
-a{
-	color: $color-links;
-	text-decoration: none;
-
-	&:hover{
-		text-decoration: underline;
-	}
-}
-
-@media all and (min-width: $phablet-min-width){
-	// By default, this is 450px+
-	p{
-		font-size: 18px;
-		line-height: 1.5em;
-	}
-}
-
-// @media all and (min-width: $tablet-min-width){
-// 	// ONLY CHANGES FOR TABLETS + DESKTOPS
-// 	// By default, this is 650px+	
-// }
-
-// @media all and (min-width: $desktop-min-width){
-// 	// ONLY CHANGES FOR DESKTOPS
-// 	// By default, this is 850px+
-// }

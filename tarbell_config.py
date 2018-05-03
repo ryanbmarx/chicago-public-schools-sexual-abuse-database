@@ -9,6 +9,16 @@ import jinja2 #for context-getting
 
 blueprint = Blueprint('cps-abuse-database', __name__)
 
+@blueprint.app_template_filter('get_max_value')
+def get_max_value(data, k):
+    """
+    Returns the max value from a list of dicts -- k is for key
+    """
+
+    seq = [x[k] for x in data]
+    return max(seq)
+
+
 @blueprint.app_template_filter('generate_autocomplete_list')
 def generate_autocomplete_list(crimes):
     """

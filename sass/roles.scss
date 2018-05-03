@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700"');
+@import 'base-variables';
+$fonts-serif: "Open Sans", "Helvetica", "Arial", sans-serif;
+
+@import 'base-mixins';
+
+@import 'reset';
+@import 'typography';
+
+
+.roles{
+	&__header{
+		@extend %header;
+	}
+
+	&__list{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		li{
+			margin-bottom: 3px;
+		}
+	}
+}
+
+
+.role{
+	position: relative;
+	
+	&__bar{
+		background: red;
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+	}
+
+	p{ 
+		margin: 0;
+		padding: 5px 5px;
+		position: relative;
+		z-index: 2;
+	}
+}

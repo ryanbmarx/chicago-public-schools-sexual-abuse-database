@@ -14,9 +14,9 @@ window.addEventListener('load', function(e){
 
 
 window.addEventListener('load', function(e){
-	console.log("Window is onloaded");
+	// console.log("Window is onloaded");
 	// console.log('schools', window.schools);
-	console.log('reports', window.policeReports);
+	// console.log('reports', window.policeReports);
 
 
 	// ----------------------------
@@ -102,11 +102,11 @@ function makeProfiles(schoolName, profilesContainer){
 				parsedProfiles += makeProfile(p);
 			}
 
-			console.log(parsedProfiles);
+			// console.log(parsedProfiles);
 			profilesContainer.innerHTML = parsedProfiles;			
 		})
 		.then(function(){
-			console.log('sending height');
+			// console.log('sending height');
 			document.querySelector('body').dataset.selectionMade = true;
 			window.pymChild.sendHeight();
 		});

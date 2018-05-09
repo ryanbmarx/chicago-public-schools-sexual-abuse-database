@@ -1,0 +1,20 @@
+{% set max_value = roles|get_max_value("count") %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="http://{{ ROOT_URL }}/css/roles.css">
+</head>
+<body class='timeline'>
+	<h1 class='roles__header'>{{ timeline_header }}</h1>
+	<p class='roles__chatter'>{{ timeline_chatter |process_text() }}</p>
+	<div class='timeline-contianer'>
+		{% include 'ai/ai2html-output/stapanian.html' %}
+	</div>
+	<div class='credits'>
+		{{ timeline_sources |markdown }}
+	</div>
+	<script type="text/javascript" src='//{{ ROOT_URL }}/js/roles.min.js'></script>
+</body>
+</html>

@@ -1,19 +1,29 @@
-{% set max_value = roles|get_max_value("count") %}
-
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Stapanian timeline</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
 	<link rel="stylesheet" type="text/css" href="http://{{ ROOT_URL }}/css/roles.css">
+	<style type='text/css'>
+		#g-stapanian-mobile{display:none;}
+
+		@media all and (min-width: 280px){
+			#g-stapanian-mobile{display:block;}
+			#g-stapanian-micro{display:none;}
+		}
+	</style>
 </head>
 <body class='timeline'>
 	<h1 class='roles__header'>{{ timeline_header }}</h1>
-	<p class='roles__chatter'>{{ timeline_chatter |process_text() }}</p>
+	<p class='roles__chatter'>{{ timeline_chatter|process_text() }}</p>
 	<div class='timeline-contianer'>
 		{% include 'ai/ai2html-output/stapanian.html' %}
 	</div>
 	<div class='credits'>
-		{{ timeline_sources |markdown }}
+		{{ timeline_sources|markdown }}
 	</div>
 	<script type="text/javascript" src='//{{ ROOT_URL }}/js/roles.min.js'></script>
 </body>

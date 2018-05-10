@@ -18,7 +18,7 @@
 {% block library_scripts %}
 	{# <script src="//{{ ROOT_URL }}/js/vendor.min.js" type="text/javascript"></script> #}
 	<script>
-		window.policeReports = {{ crimes|sort(attribute="SCHOOL_NAME")|tojson }};
+		window.policeReports = {{ reports|sort(attribute="SCHOOL_NAME")|tojson }};
 		window.noteColocated = "{{ note_colocated }}";
 		window.noteColocatedHeader = "{{ note_colocated_header }}";
 		window.noteUnknown = "{{ note_unknown_school }}";

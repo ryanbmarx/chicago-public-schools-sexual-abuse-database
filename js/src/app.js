@@ -123,9 +123,9 @@ function makeProfile(record){
 	const formattedDate = timeFormat("%b %-d, %Y")(getJSDateFromExcel(record.DATE));
 
 	return `<tr class='profile ${ addClass }'>
-				<td>${ formattedDate }</td>
+				<td class='date'>${ formattedDate }</td>
 				<td><strong>${ record.PRIMARY_TYPE } - </strong>${ record.DESCRIPTION }</td>
-				<td><strong>${ arrestMade }</strong></td></tr>`;
+				<td class='arrests'>${ arrestMade }</td></tr>`;
 }
 
 function searchDatabase(schoolName){

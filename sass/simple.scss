@@ -8,11 +8,9 @@
 @import 'typography';
 
 
-.roles{
-	&__header{
-		@extend %header;
-	}
 
+
+.roles{
 	&__list{
 		margin: 0;
 		padding: 0;

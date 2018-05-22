@@ -2,12 +2,12 @@
 <html>
 <head>
 	<title>{{ tips_header }}</title>
-	<link rel="stylesheet" type="text/css" href="http://{{ ROOT_URL }}/css/roles.css">
+	<link rel="stylesheet" type="text/css" href="http://{{ ROOT_URL }}/css/simple.min.css">
 </head>
 <body class='tips'>
-	<h1 class='tips__header'>{{ tips_header }}</h1>
-	<p class='tips__chatter'>{{ tips_chatter|process_text() }}</p>
-	{% include 'tips/ai2html-output/tips.html' %}
+	<h1 class='header'>{{ tips_header }}</h1>
+	<p>{{ tips_chatter|process_text() }}</p>
+	{% include 'tips/ai2html-output/tips.html' ignore missing %}
 	<div class='credits'>
 		{{ tips_sources|markdown }}
 	</div>

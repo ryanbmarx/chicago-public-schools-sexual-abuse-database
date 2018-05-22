@@ -4,11 +4,11 @@
 <html>
 <head>
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="http://{{ ROOT_URL }}/css/roles.css">
+	<link rel="stylesheet" type="text/css" href="http://{{ ROOT_URL }}/css/simple.min.css">
 </head>
 <body class='roles'>
-	<h1 class='roles__header'>{{ roles_header }}</h1>
-	<p class='roles__chatter'>{{ roles_chatter|process_text() }}</p>
+	<h1 class='header'>{{ roles_header }}</h1>
+	<p>{{ roles_chatter|process_text() }}</p>
 	<ul class='roles__list'>
 	{%- for role in roles|sort(True, attribute="count") %}
 		{% set width = role.count / max_value * 100 %}

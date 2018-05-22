@@ -102,8 +102,8 @@ module.exports = function(grunt) {
     },
     app: {
       files: {
-        'css/styles.css': 'sass/styles.scss',
-        'css/roles.css': 'sass/roles.scss'
+        'css/styles.min.css': 'sass/styles.scss',
+        'css/simple.min.css': 'sass/simple.scss'
       }
     }
   };

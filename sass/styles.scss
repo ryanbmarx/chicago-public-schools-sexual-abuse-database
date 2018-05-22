@@ -120,10 +120,6 @@ html, body{
 	padding: 0 0 $popup-max-height 0;
 }
 
-.header{
-	@extend %header;
-}
-
 #abuse-lookup {
 	@include searchbar($border-radius);
 	position:relative;

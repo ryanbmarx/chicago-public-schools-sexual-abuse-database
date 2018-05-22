@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{ tips_header }}</title>
+	<link rel="stylesheet" type="text/css" href="http://{{ ROOT_URL }}/css/roles.css">
+</head>
+<body class='tips'>
+	<h1 class='tips__header'>{{ tips_header }}</h1>
+	<p class='tips__chatter'>{{ tips_chatter|process_text() }}</p>
+	{% include 'tips/ai2html-output/tips.html' %}
+	<div class='credits'>
+		{{ tips_sources|markdown }}
+	</div>
+	<script type="text/javascript" src='//{{ ROOT_URL }}/js/roles.min.js'></script>
+</body>
+</html>

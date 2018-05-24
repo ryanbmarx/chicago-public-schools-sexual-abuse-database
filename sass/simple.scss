@@ -22,12 +22,14 @@
 	}
 }
 
+$barcolor: lighten($yankees, 45);
+@debug $barcolor;
 
 .role{
 	position: relative;
 	
 	&__bar{
-		background: $bright;
+		background: $barcolor;
 		position: absolute;
 		top: 0;
 		left: 0;

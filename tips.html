@@ -26,7 +26,7 @@
 	<p>{{ tips_chatter|process_text() }}</p>
 	{% include 'tips/ai2html-output/abuse_graphics.html' ignore missing %}
 	<div class='credits'>
-		{{ tips_sources|markdown }}
+		{% if tips_sources %}{{ tips_sources|markdown }}{% endif %}
 	</div>
 	<script type="text/javascript" src='//{{ ROOT_URL }}/js/simple.min.js'></script>
 </body>

@@ -36,22 +36,20 @@
 {% block content %}
 		<h1 class='header'>{{ db_header }}</h1>
 		{{ db_chatter|markdown }}
-		
 		<form id='abuse-lookup'>
-			<label for="school-search-bar" class='sr-only'>Search for a school</label>
-			<input id='school-search-bar' type='text' placeholder="Search for a school" />
-			<button type='submit'>Search</button>
+			<label for="school-search-bar" class='sr-only'>{{ db_search_label }}</label>
+			<input id='school-search-bar' type='text' placeholder="{{ db_search_label }}" />
+			<button type='submit'>{{ db_button_label }}</button>
 		</form>
 		<dl class='profiles-legend'>
 			<dt><span></span></dt>
-			<dd>Arrest was made</dd>
+			<dd>{{ db_arrest_label }}</dd>
 		</dl>
 		<div class='profiles'>
-			<p>No records selected.</p>
+			<p>{{ db_no_records }}</p>
 		</div>
-		
 		<div class='credits'>
-			{{ sources|markdown }}
+			{{ db_sources|markdown }}
 		</div>
 {% endblock content %}
 

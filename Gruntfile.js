@@ -43,15 +43,15 @@ module.exports = function(grunt) {
         ]
       }
     },
-    roles: {
-      src: ['js/src/roles.js'],
-      dest: 'js/roles.min.js',
+    simple: {
+      src: ['js/src/simple.js'],
+      dest: 'js/simple.min.js',
       options: {
         plugin: [
           [
             'minifyify', {
-              map: 'roles.min.js.map',
-              output: './js/roles.min.js.map'
+              map: 'simple.min.js.map',
+              output: './js/simple.min.js.map'
             }
           ]
         ],

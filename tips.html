@@ -22,8 +22,8 @@
 	</style>
 </head>
 <body class='tips'>
-	<h1 class='header'>{{ tips_header }}</h1>
-	<p>{{ tips_chatter|process_text() }}</p>
+	<!-- <h1 class='header'>{{ tips_header }}</h1>
+	<p>{{ tips_chatter|process_text() }}</p>-->
 	{% include 'tips/ai2html-output/abuse_graphics.html' ignore missing %}
 	<div class='credits'>
 		{% if tips_sources %}{{ tips_sources|markdown }}{% endif %}

@@ -81,7 +81,7 @@ function makeProfiles(schoolName, profilesContainer){
 
 
 			let parsedProfiles = `<h1 class='profiles__school-name'>${schoolName}</h1>
-				<p class='profiles__total-records'>${profilesData.length} ${reportReports} for this ${schoolType.toLowerCase()} school:</p>
+				<p class='profiles__total-records'>${profilesData.length} ${reportReports} for this ${schoolType} school:</p>
 				<table><thead>
 				<tr>
 					<th class='date'>Date</th>

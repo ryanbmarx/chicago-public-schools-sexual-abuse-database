@@ -76,12 +76,11 @@ function makeProfiles(schoolName, profilesContainer){
 			const 	reportReports = profilesData.length > 1 ? "reports" : "report",
 					colocated = profilesData[0].COLOCATED == 1 ? true : false, 
 					isUnknown = profilesData[0].SCHOOL_NAME.toUpperCase() == "UNKNOWN" || profilesData[0].SCHOOL_TYPE.toUpperCase() == "UNK" ? true : false,
-					schoolType = isUnknown ? "" : profilesData[0].SCHOOL_TYPE;
-
-
+					schoolType = isUnknown ? "" : profilesData[0].SCHOOL_TYPE,
+					thisThese = colocated ? "these schools" : `this ${schoolType} school`;
 
 			let parsedProfiles = `<h1 class='profiles__school-name'>${schoolName}</h1>
-				<p class='profiles__total-records'>${profilesData.length} ${reportReports} for this ${schoolType} school:</p>
+				<p class='profiles__total-records'>${profilesData.length} ${reportReports} for ${thisThese}:</p>
 				<table><thead>
 				<tr>
 					<th class='date'>Date</th>

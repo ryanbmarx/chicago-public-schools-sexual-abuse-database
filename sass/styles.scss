@@ -4,7 +4,7 @@
 @import 'config';
 
 $arrest-color: rgba($trib-blue2, .2);
-$popup-max-height: 150px;
+$popup-max-height: 100px;
 
 // $darkest: #070808;
 // $dark: #293B93;
@@ -117,7 +117,7 @@ $popup-max-height: 150px;
 // ---- WRITE MORE PROJECT STYLES HERE ---------------------------------------------
 
 html, body{
-	padding: 0 0 $popup-max-height 0;
+	padding: 0 0 0 0;
 }
 
 #abuse-lookup {
@@ -152,7 +152,7 @@ body[data-selection-made]{
 	        // This is the autocomplete list
 	        max-height: none;
 	        overflow: scroll;
-	        background: red;
+	        // background: red;
 	    }
 	}
 }

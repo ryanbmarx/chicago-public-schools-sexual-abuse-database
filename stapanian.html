@@ -17,9 +17,9 @@
 	</style>
 </head>
 <body class='timeline'>
-	<h1 class='roles__header'>{{ timeline_header }}</h1>
-	<p class='roles__chatter'>{{ timeline_chatter|process_text() }}</p>
-	<div class='timeline-contianer'>
+	<h1 class='header'>{{ timeline_header }}</h1>
+	<p class='chatter'>{{ timeline_chatter|process_text() }}</p>
+	<div class='timeline-container'>
 		{% include 'ai/ai2html-output/stapanian.html' %}
 	</div>
 	<div class='credits'>

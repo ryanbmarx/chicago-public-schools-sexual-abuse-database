@@ -1,7 +1,8 @@
 import 'awesomplete';
 import clickTrack from "./click-track.js";
-import getJSDateFromExcel from './get-js-date-from-excel.js';
-import {timeFormat} from 'd3-time-format';
+// import getJSDateFromExcel from './get-js-date-from-excel.js';
+// import {timeFormat} from 'd3-time-format';
+import formatDate from "./format-date.js";
 
 const pym = require('pym.js');
 
@@ -80,7 +81,7 @@ function makeProfiles(schoolName, profilesContainer){
 
 
 			let parsedProfiles = `<h1 class='profiles__school-name'>${schoolName}</h1>
-				<p class='profiles__total-records'>${profilesData.length} ${reportReports} for this ${schoolType} school:</p>
+				<p class='profiles__total-records'>${profilesData.length} ${reportReports} for this ${schoolType.toLowerCase()} school:</p>
 				<table><thead>
 				<tr>
 					<th class='date'>Date</th>
@@ -114,13 +115,14 @@ function makeProfiles(schoolName, profilesContainer){
 }
 
 function makeProfile(record){
-	let 	arrestMade = "No.",
+	let 	arrestMade = "No",
 			addClass = "";
 	if (record.ARREST == 1){
-		arrestMade = "Yes.";
+		arrestMade = "Yes";
 		addClass = "profile--arrest"
 	};
-	const formattedDate = timeFormat("%b %-d, %Y")(getJSDateFromExcel(record.DATE));
+	// const formattedDate = timeFormat("%b %-d, %Y")(getJSDateFromExcel(record.DATE));
+	const formattedDate = formatDate(record.DATE, "%b %-d, %Y", true);
 
 	return `<tr class='profile ${ addClass }'>
 				<td class='date'>${ formattedDate }</td>
